@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class OffsetGrab : XRGrabInteractable
@@ -44,4 +45,16 @@ public class OffsetGrab : XRGrabInteractable
         interactorPosition = Vector3.zero;
         interactorRotation = Quaternion.identity;
     }
+
+	public void DetachObject()
+	{
+		StartCoroutine("DisableInteractor");
+	}
+
+	private IEnumerator DisableInteractor()
+	{
+		enabled = false;
+		yield return new WaitForSeconds(0.25f);
+		enabled = true;
+	}
 }
