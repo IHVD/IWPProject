@@ -11,7 +11,11 @@ public class BunsenBurner : XRBaseInteractable
 	int flameStateN;
 	bool bunsenPressed = false;
 
-	public UnityEvent OnPress = null;
+	public AudioSource audioSource = null;
+
+	public AudioClip[] burnerSounds = null;
+
+	/*public UnityEvent OnPress = null;
 
 	private float yMin = 0.0f;
 	private float yMax = 0.0f;
@@ -58,6 +62,12 @@ public class BunsenBurner : XRBaseInteractable
 		Collider collider = GetComponent<Collider>();
 		yMin = transform.localPosition.y - (collider.bounds.size.y * 0.5f);
 		yMax = transform.localPosition.y;
+	}*/
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Hands")
+			ChangeFlame();
 	}
 
 	public void ChangeFlame()
@@ -75,12 +85,17 @@ public class BunsenBurner : XRBaseInteractable
 		}
 
 		flameState = (FlameStates)flameStateN;
+		if (audioSource.isPlaying)
+			audioSource.Stop();
+
+		audioSource.clip = burnerSounds[flameStateN];
+		audioSource.Play();
 
 		Debug.Log("Current Flame:" + flameState);
 		
 	}
 
-	public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
+	/*public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
 	{
 		if (hoverInteractor)
 		{
@@ -124,5 +139,5 @@ public class BunsenBurner : XRBaseInteractable
 		float inRange = Mathf.Clamp(transform.localPosition.y, yMin, yMax + 0.01f);
 
 		return transform.localPosition.y == inRange;
-	}
+	}*/
 }
