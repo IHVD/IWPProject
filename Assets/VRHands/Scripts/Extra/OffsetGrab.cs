@@ -12,7 +12,9 @@ public class OffsetGrab : XRGrabInteractable
         base.OnSelectEntered(interactor);
         StoreInteractor(interactor);
         MatchAttachmentPoints(interactor);
-    }
+		GameController.gameCont.holdingObject = transform;
+
+	}
 
     private void StoreInteractor(XRBaseInteractor interactor)
     {
@@ -32,7 +34,8 @@ public class OffsetGrab : XRGrabInteractable
         base.OnSelectExiting(interactor);
         ResetAttachmentPoint(interactor);
         ClearInteractor(interactor);
-    }
+		GameController.gameCont.holdingObject = null;
+	}
 
     private void ResetAttachmentPoint(XRBaseInteractor interactor)
     {

@@ -9,6 +9,15 @@ TagManager:
   - audio_zone3
   - Snappable
   - Hands
+  - Box
+  - Trail
+  - TTSYes
+  - TTSNo
+  - ToggleCoat
+  - 2_fetchBeaker
+  - 2_fillBeaker
+  - 2_placeBeaker
+  - Stand
   layers:
   - Default
   - TransparentFX
@@ -17,9 +26,9 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
+  - HittableObjectsClickRay
+  - HittableObjects
+  - ZoneBlocks
   - 
   - 
   - 
