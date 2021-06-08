@@ -117,6 +117,7 @@ public class ClickOnRay : MonoBehaviour
 			if (GameController.gameCont.gameStage == 2)
 			{
 				GameController.gameCont.ToggleBeakerFetched(true);
+				GameController.gameCont.PlayProgressSound();
 			}
 			else
 				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
@@ -126,6 +127,7 @@ public class ClickOnRay : MonoBehaviour
 			if (GameController.gameCont.gameStage == 2 && GameController.gameCont.grabbedBeaker)
 			{
 				GameController.gameCont.ToggleBeakerFilled(true);
+				GameController.gameCont.PlayProgressSound();
 			}
 			else
 				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
@@ -140,6 +142,52 @@ public class ClickOnRay : MonoBehaviour
 				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
 		}
 		//Step 3
+		else if (functionToTrigger == "3_checkedRings")
+		{
+			if (GameController.gameCont.gameStage == 3)
+			{
+				GameController.gameCont.ToggleCheckedRings(true);
+				GameController.gameCont.PlayProgressSound();
+			}
+			else
+				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
+		}
+		else if (functionToTrigger == "3_connectedTube")
+		{
+			if (GameController.gameCont.gameStage == 3 && GameController.gameCont.checkedRings)
+			{
+				GameController.gameCont.ToggleConnectedTube(true);
+				GameController.gameCont.PlayProgressSound();
+			}
+			else
+				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
+		}
+		else if (functionToTrigger == "3_openedTube")
+		{
+			if (GameController.gameCont.gameStage == 3 && GameController.gameCont.checkedRings && GameController.gameCont.connectedTube)
+			{
+				GameController.gameCont.ToggleOpenedTube(true);
+				GameController.gameCont.PlayProgressSound();
+			}
+			else
+				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
+		}
+		else if (functionToTrigger == "3_litFlame")
+		{
+			if (GameController.gameCont.gameStage == 3 && GameController.gameCont.checkedRings && GameController.gameCont.connectedTube && GameController.gameCont.openedTube)
+			{
+				GameController.gameCont.ToggleLitFlame(true);
+			}
+			else
+				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
+		}
+		else if (functionToTrigger == "4_standOverFlame")
+			if(GameController.gameCont.gameStage == 4)
+			{
+				GameController.gameCont.ToggleStandOverFlame(true);
+			}
+		else
+				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
 	}
 
 	public void TriggerObjectSelect(XRBaseInteractable interactable)

@@ -28,6 +28,9 @@ public class SnapToCollider : MonoBehaviour
 				snappable.isSnapped = true;
 				other.transform.position = transform.position;
 				other.transform.rotation = Quaternion.identity;
+				other.transform.SetParent(transform);
+
+				Debug.Log(other.name + ", my tag: " + tag);
 
 				if(other.name == "ThinVial" && tag == "Stand")
 				{
@@ -35,13 +38,20 @@ public class SnapToCollider : MonoBehaviour
 					if(!GameController.gameCont.placedOnStand)
 						ClickOnRay.clickRay.TriggerObject("2_placeBeaker");
 				}
+
+				if(other.name == "Stand" && tag == "Burner")
+				{
+					//GameController.gameCont.ToggleBeakerPlaced(true);
+					if (!GameController.gameCont.standOverFlame)
+						ClickOnRay.clickRay.TriggerObject("4_standOverFlame");
+				}
 			}
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.tag == "Snappable")
+		/*if (other.tag == "Snappable")
 		{
 			Snappable snappable = other.GetComponent<Snappable>();
 
@@ -50,6 +60,6 @@ public class SnapToCollider : MonoBehaviour
 				other.attachedRigidbody.isKinematic = false;
 				snappable.isSnapped = false;
 			}
-		}
+		}*/
 	}
 }

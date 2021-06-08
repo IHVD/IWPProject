@@ -18,6 +18,12 @@ TagManager:
   - 2_fillBeaker
   - 2_placeBeaker
   - Stand
+  - Burner
+  - 3_checkedRings
+  - 3_connectedTube
+  - 3_openedTube
+  - 3_litFlame
+  - 4_standOverFlame
   layers:
   - Default
   - TransparentFX

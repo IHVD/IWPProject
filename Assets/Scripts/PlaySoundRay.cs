@@ -31,8 +31,8 @@ public class PlaySoundRay : MonoBehaviour
 			}
 			else
 			{
-				if (objectHit.collider.transform.GetComponent<AudioClipHolder>() != null)
-					PlaySoundAgain(objectHit.collider.transform.GetComponent<AudioClipHolder>().audioClip);
+				/*if (objectHit.collider.transform.GetComponent<AudioClipHolder>() != null)
+					PlaySoundAgain(objectHit.collider.transform.GetComponent<AudioClipHolder>().audioClip);*/
 			}
 		}
 

@@ -61,12 +61,45 @@ public class GameController : MonoBehaviour
 	public bool openedTube = false;
 	public bool litFlame = false;
 	public AudioClip audioExplanationStep3 = null;
+	public AudioClip audioGasValveOpen = null;
+	public AudioClip audioGasValveClosed = null;
+
+	public void ToggleCheckedRings(bool enable)
+	{
+		checkedRings = enable;
+	}
+
+	public void ToggleConnectedTube(bool enable)
+	{
+		connectedTube = enable;
+	}
+
+	public void ToggleOpenedTube(bool enable)
+	{
+		openedTube = enable;
+		if (enable)
+			PlaySound(audioGasValveOpen);
+		else
+			PlaySound(audioGasValveClosed);
+	}
+
+	public void ToggleLitFlame(bool enable)
+	{
+		litFlame = enable;
+		ChangeGameStage(4);
+	}
 	#endregion
 
 	#region Step 4 - Stand over Flame
 	[Header("Step 4 - Stand over Flame")]
 	public bool standOverFlame = false;
 	public AudioClip audioExplanationStep4 = null;
+
+	public void ToggleStandOverFlame(bool enable)
+	{
+		standOverFlame = enable;
+		ChangeGameStage(5);
+	}
 	#endregion
 
 	#region Step 5 - Set Oxygen

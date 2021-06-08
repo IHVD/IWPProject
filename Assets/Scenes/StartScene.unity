@@ -2250,6 +2250,8 @@ MonoBehaviour:
   openedTube: 0
   litFlame: 0
   audioExplanationStep3: {fileID: 0}
+  audioGasValveOpen: {fileID: 8300000, guid: b1cf9e892d89c584dbea79d8bea57003, type: 3}
+  audioGasValveClosed: {fileID: 8300000, guid: 323e3a603b7471746a73eb1389870f2d, type: 3}
   standOverFlame: 0
   audioExplanationStep4: {fileID: 0}
   oxygenValue: 0
@@ -2262,6 +2264,7 @@ MonoBehaviour:
   globalSource: {fileID: 0}
   progressSound: {fileID: 8300000, guid: a68dc391fcd91504a9a499729c650b43, type: 3}
   errorSound: {fileID: 8300000, guid: 04ee6974eebdd474bba2e6523dfa00cf, type: 3}
+  holdingObject: {fileID: 0}
 --- !u!4 &1172438993
 Transform:
   m_ObjectHideFlags: 0
