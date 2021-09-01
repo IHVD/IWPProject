@@ -107,6 +107,8 @@ public class GameController : MonoBehaviour
 	public float oxygenValue = 0.0f;
 	public bool oxygenSet = false;
 	public AudioClip audioExplanationStep5 = null;
+
+
 	#endregion
 
 	#region Step 6 - Observe Experiment

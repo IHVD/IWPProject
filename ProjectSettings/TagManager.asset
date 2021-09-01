@@ -24,6 +24,8 @@ TagManager:
   - 3_openedTube
   - 3_litFlame
   - 4_standOverFlame
+  - 5_bunsenLess
+  - 5_bunsenMore
   layers:
   - Default
   - TransparentFX

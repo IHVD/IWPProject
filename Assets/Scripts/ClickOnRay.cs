@@ -112,7 +112,7 @@ public class ClickOnRay : MonoBehaviour
 				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
 		}
 		//Step 2
-		else if(functionToTrigger == "2_fetchBeaker")
+		else if (functionToTrigger == "2_fetchBeaker")
 		{
 			if (GameController.gameCont.gameStage == 2)
 			{
@@ -182,12 +182,35 @@ public class ClickOnRay : MonoBehaviour
 				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
 		}
 		else if (functionToTrigger == "4_standOverFlame")
-			if(GameController.gameCont.gameStage == 4)
+		{
+
+			if (GameController.gameCont.gameStage == 4)
 			{
 				GameController.gameCont.ToggleStandOverFlame(true);
 			}
-		else
+			else
 				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
+		}
+		else if (functionToTrigger == "5_bunsenLess")
+		{
+
+			if (GameController.gameCont.gameStage == 4)
+			{
+				GameController.gameCont.ToggleStandOverFlame(true);
+			}
+			else
+				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
+		}
+		else if (functionToTrigger == "5_bunsenMore")
+		{
+
+			if (GameController.gameCont.gameStage == 4)
+			{
+				GameController.gameCont.ToggleStandOverFlame(true);
+			}
+			else
+				GameController.gameCont.PlaySound(GameController.gameCont.errorSound);
+		}
 	}
 
 	public void TriggerObjectSelect(XRBaseInteractable interactable)
